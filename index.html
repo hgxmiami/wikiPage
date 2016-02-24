@@ -9,11 +9,31 @@
 </head>
 
     <body>
-    
+        <div class="container">
+            <input class="textBox" type="text">
+            <button class="button" id="search1">Click on Me</button>
+        </div>
+        <div id="resultContainer"></div>
+        
     </body>
-
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
+    $("#search1").click(function() {
+        var userInput = $(".textBox").val();
+        $.getJSON(
+            "http://en.wikipedia.org//w/api.php?action=query&format=json&prop=extracts&generator=search&exlimit=16&exintro=1&gsrsearch="+userInput+"&callback=?", 
+            function(resp){
+                console.log(resp);
+                var pagez = resp.query.pages; 
+                for (var x in pagez) {
+                    $("#resultContainer").append("<div class='res'>"+pagez[x].title+ "</div>");
+                    $("#resultContainer").append("<div class='res'>"+pagez[x].extract+ "</div>");
+                }
+        }); 
 
-    
+
+    });
+
+   
 </script>
 </html>
