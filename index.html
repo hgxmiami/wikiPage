@@ -26,8 +26,7 @@
                 console.log(resp);
                 var pagez = resp.query.pages; 
                 for (var x in pagez) {
-                    $("#resultContainer").append("<div class='res'>"+pagez[x].title+ "</div>");
-                    $("#resultContainer").append("<div class='res'>"+pagez[x].extract+ "</div>");
+                    $("#resultContainer").append("<div class='res'><h1>"+pagez[x].title+"</h1><p>"+pagez[x].extract+"</p></div>");
                 }
         }); 
 
