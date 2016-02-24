@@ -26,7 +26,11 @@
     
     border: solid;
     border-color: black;
-    height: 30px;
-    width: 250px;
+    align-content: center;
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    transform: translateY(-20%);
+    transform: translateX(-50%);
     
 }
